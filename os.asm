@@ -1,10 +1,13 @@
 [org 0x7c00]
+
 mov ax, 0
 mov ds, ax
 mov si, msg
 jmp loop
+
 main:
     jmp $
+
 
 loop:
     lodsb
@@ -16,6 +19,6 @@ loop:
 
 
 
-msg: db 'Hello World!',0
+msg: db 'hello world!',0
 times 510-($-$$) db 0       
 dw 0xAA55 

@@ -4,26 +4,22 @@ SECTIONS
 {
     . = 0x00100000;
     
-    .text ALIGN(4K) : AT(ADDR(.text))
-    {
+    .text : {
         *(.multiboot)
         *(.text*)
     }
     
-    .rodata ALIGN(4K) : AT(ADDR(.rodata))
-    {
+    .rodata : {
         *(.rodata*)
     }
     
-    .data ALIGN(4K) : AT(ADDR(.data))
-    {
+    .data : {
         *(.data*)
     }
     
-    .bss ALIGN(4K) : AT(ADDR(.bss))
-    {
-        *(.bss*)
+    .bss : {
         *(COMMON)
+        *(.bss*)
     }
     
     _end = .;

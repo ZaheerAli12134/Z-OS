@@ -1,19 +1,16 @@
 #include "gdt.h"
+#include "vga/vga.h"
 
-void kernelmain(){
-    
-    char *video = (char*)0xB8000;
-    
-    video[0] = 'H';
-    video[1] = 0x0F;
-    
+void kernelmain(void) {
     initgdt();
+
+    print("Hi\n");
     
-    video[2] = 'i';
-    video[3] = 0x0F;
-    
-    // Infinite loop
-    while(1){
+    for(int i = 0; i<30; i++){
+        print("hi\n");
 
     }
+
+    // Infinite loop
+    while (1) { }
 }

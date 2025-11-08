@@ -1,16 +1,14 @@
 #include "gdt.h"
 #include "vga/vga.h"
+#include "interrupt/interrupt.h"
 
 void kernelmain(void) {
     initgdt();
+    initIDT();
 
-    print("Hi\n");
+    print("Hi");
+    print("\n");
+    print(1/0);
     
-    for(int i = 0; i<30; i++){
-        print("hi\n");
-
-    }
-
-    // Infinite loop
-    while (1) { }
 }
+

@@ -1,14 +1,20 @@
 #include "gdt.h"
 #include "vga/vga.h"
 #include "interrupt/interrupt.h"
+#include "utils/utils.h"
+#include "interrupt/keyboard.h"
 
 void kernelmain(void) {
     initgdt();
-    initIDT();
 
-    print("Hi");
+
+    initIDT();
+    print("WELCOME TO MY OS");
     print("\n");
-    print(1/0);
+    initKeyboard();
+    while(1){
+
+    }
     
 }
 

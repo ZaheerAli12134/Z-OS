@@ -43,4 +43,17 @@ void print(const char* s) {
     }
 }
 
+void printChar(char c) {
+    if (c == '\n') {
+        newLine();
+    } else {
+        if (column >= width)
+            newLine();
+
+        vga[line * width + column] = (uint16_t)c | ((uint16_t)color << 8);
+        column++;
+    }
+}
+
+
 

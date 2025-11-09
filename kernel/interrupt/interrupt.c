@@ -4,6 +4,7 @@
 #include "../vga/vga.h"
 
 
+
 struct idt_entry idt[256];
 struct idtptr pointer;
 

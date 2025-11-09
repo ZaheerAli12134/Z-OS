@@ -1,5 +1,4 @@
 #include "../utils/utils.h"
-
 struct idt_entry{
    uint16_t base_low;      
    uint16_t selector;       
@@ -16,7 +15,7 @@ struct idtptr{
 void initIDT();
 
 void setIdtGate(uint8_t num, uint32_t base, uint16_t selector, uint8_t gate_type);
-
+void irq_install_handler (int irq, void (*handler)(struct InterruptRegisters* r));
 void isr_handler(struct InterruptRegisters* regs);
 
 

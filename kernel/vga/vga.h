@@ -9,5 +9,6 @@
 
 void print(const char* s);
 void newLine();
+void printChar(char c);
 void scroll();
 
